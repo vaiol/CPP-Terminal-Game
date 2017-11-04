@@ -54,3 +54,19 @@ void SpaceShip::levelUp() {
     _level++;
 }
 
+void SpaceShip::moveUp(int distance) {
+    SpaceObject::moveUp(distance);
+}
+
+void SpaceShip::moveLeft(int distance) {
+    SpaceObject::moveLeft(distance);
+}
+
+void SpaceShip::moveDown(int distance) {
+    SpaceObject::moveDown(distance);
+}
+
+void SpaceShip::moveRight(int distance) {
+    SpaceObject::moveRight(distance);
+}
+

@@ -6,7 +6,7 @@ Bullet::Bullet(const Bullet &bullet) {
     *this = bullet;
 }
 
-Bullet::Bullet(int x, int y, int damage) : SpaceObject(x, y, damage, damage, damage) {}
+Bullet::Bullet(int x, int y, int damage) : SpaceObject(x, y, 0, damage, damage) {}
 
 Bullet::~Bullet() {
 
@@ -16,6 +16,6 @@ std::ostream &operator<<(std::ostream &os, const Bullet &s) {
     return os;
 }
 
-void Bullet::moveUp(int amount) {
-    SpaceObject::move(_x, _y += amount);
+void Bullet::moveUp(int distance) {
+    SpaceObject::moveUp(distance);
 }

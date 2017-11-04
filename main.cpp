@@ -4,11 +4,11 @@
 
 int main() {
     SpaceShip p(100,100);
-    p.move(90, 90);
+    p.moveUp(1);
     SpaceShip pCopy(p);
-    p -= 1;
+    p -= 10;
     std::cout << p << std::endl;
     std::cout << pCopy << std::endl;
-    std::cout << *pCopy.attack() << std::endl;
+    std::cout << *pCopy.attack()->moveUp() << std::endl;
 }
 

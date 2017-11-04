@@ -9,7 +9,7 @@ public:
     Bullet(int x, int y, int damage);
     Bullet(const Bullet &bullet);
     virtual ~Bullet();
-    void moveUp(int amount);
+    void moveUp(int distance);
 };
 
 std::ostream &operator<<(std::ostream &os, const Bullet &b);

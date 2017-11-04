@@ -16,6 +16,10 @@ public:
     SpaceShip &operator=(const SpaceShip &player);
     Bullet *attack() const;
     void levelUp();
+    void moveUp(int distance);
+    void moveLeft(int distance);
+    void moveDown(int distance);
+    void moveRight(int distance);
 private:
     int _score;
     int _level;

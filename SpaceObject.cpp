@@ -52,11 +52,13 @@ SpaceObject &SpaceObject::operator=(const SpaceObject &spaceObject) {
 
 SpaceObject &SpaceObject::operator+=(int amount) {
     _hp += amount;
+    _normHP();
     return *this;
 }
 
 SpaceObject &SpaceObject::operator-=(int amount) {
     _hp -= amount;
+    _normHP();
     return *this;
 }
 
@@ -68,9 +70,46 @@ std::ostream &operator<<(std::ostream &os, const SpaceObject &o) {
 
 /*LOGIC*/
 
-void SpaceObject::move(int x, int y) {
-    _x = x;
-    _y = y;
+
+void SpaceObject::moveDown(int distance) {
+    if (distance < 0) {
+        distance = 0;
+    }
+    _y -= distance;
+}
+
+void SpaceObject::moveUp(int distance) {
+    if (distance < 0) {
+        distance = 0;
+    }
+    _y += distance;
+}
+
+void SpaceObject::moveLeft(int distance) {
+    if (distance < 0) {
+        distance = 0;
+    }
+    _x -= distance;
+}
+
+void SpaceObject::moveRight(int distance) {
+    if (distance < 0) {
+        distance = 0;
+    }
+    _x += distance;
+}
+
+void SpaceObject::_normHP() {
+    if (_hp < 0) {
+        _hp = 0;
+    }
+    if (_hp > _maxHP) {
+        _hp = _maxHP;
+    }
+}
+
+void SpaceObject::kill() {
+    _hp = 0;
 }
 
 
