@@ -1,12 +1,12 @@
 #include "Bullet.hpp"
 
-Bullet::Bullet() : SpaceObject(0, 0, 0, 0, 0) {}
+Bullet::Bullet() : SpaceObject(0, 0, 0, 1, 1, 4) {}
 
 Bullet::Bullet(const Bullet &bullet) {
     *this = bullet;
 }
 
-Bullet::Bullet(int x, int y, int damage) : SpaceObject(x, y, 0, damage, damage) {}
+Bullet::Bullet(int x, int y, int damage) : SpaceObject(x, y, damage, damage, damage, 4) {}
 
 Bullet::~Bullet() {
 

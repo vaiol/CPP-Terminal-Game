@@ -9,6 +9,6 @@ int main() {
     p -= 10;
     std::cout << p << std::endl;
     std::cout << pCopy << std::endl;
-    std::cout << *pCopy.attack()->moveUp() << std::endl;
+    std::cout << *pCopy.attack() << std::endl;
 }
 

@@ -10,25 +10,27 @@ public:
     int getDamage() const;
     int getHP() const;
     int getMaxHP() const;
+    int getSpeed() const;
     virtual SpaceObject &operator=(const SpaceObject &spaceObject);
     SpaceObject &operator+=(int amount);
     SpaceObject &operator-=(int amount);
     void kill();
+    virtual void moveUp(int distance);
+    virtual void moveLeft(int distance);
+    virtual void moveDown(int distance);
+    virtual void moveRight(int distance);
 protected:
     SpaceObject();
     SpaceObject(SpaceObject &spaceObject);
-    SpaceObject(int _x, int _y, int _damage, int _hp, int _maxHP);
+    SpaceObject(int x, int y, int damage, int hp, int maxHP, int speed);
     virtual ~SpaceObject();
     int _x;
     int _y;
     int _damage;
     int _hp;
     int _maxHP;
+    int _speed;
     void _normHP();
-    virtual void moveUp(int distance);
-    virtual void moveLeft(int distance);
-    virtual void moveDown(int distance);
-    virtual void moveRight(int distance);
 };
 
 std::ostream &operator<<(std::ostream &os, const SpaceObject &o);

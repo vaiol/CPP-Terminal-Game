@@ -2,12 +2,12 @@
 
 /*CONSTRUCTORS AND DESTRUCTOR*/
 
-SpaceShip::SpaceShip() : SpaceObject(0, 0, 1, 100, 100) {
+SpaceShip::SpaceShip() : SpaceObject(0, 0, 1, 100, 100, 2) {
     _score = 0;
     _level = 1;
 }
 
-SpaceShip::SpaceShip(int x, int y) : SpaceObject(x, y, 1, 100, 100) {
+SpaceShip::SpaceShip(int x, int y) : SpaceObject(x, y, 1, 100, 100, 2) {
     _score = 0;
     _level = 1;
 }

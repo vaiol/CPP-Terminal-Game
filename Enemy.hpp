@@ -8,7 +8,7 @@ public:
     Enemy();
     Enemy(int x, int y);
     Enemy(Enemy &enemy);
-    Enemy(int x, int y, int hp);
+    Enemy(int x, int y, int hp, int speed);
     virtual ~Enemy();
     void moveDown(int distance);
 };

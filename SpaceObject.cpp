@@ -10,11 +10,15 @@ SpaceObject::SpaceObject() {
     _hp = _maxHP;
 }
 
-SpaceObject::SpaceObject(int _x, int _y, int _damage, int _hp, int _maxHP) : _x(_x), _y(_y), _damage(_damage), _hp(_hp),
-                                                                             _maxHP(_maxHP) {}
+SpaceObject::SpaceObject(int x, int y, int damage, int hp, int maxHP, int speed) : _x(x), _y(y), _damage(damage), _hp(hp), _maxHP(maxHP), _speed(speed) {
+    _normHP();
+    _damage = _damage < 0 ? 0 : _damage;
+    _speed = _speed < 0 ? 0 : _speed;
+}
 
 SpaceObject::SpaceObject(SpaceObject &spaceObject) {
     *this = spaceObject;
+    _normHP();
 }
 
 SpaceObject::~SpaceObject() {}
@@ -39,6 +43,10 @@ int SpaceObject::getHP() const {
 
 int SpaceObject::getMaxHP() const {
     return _maxHP;
+}
+
+int SpaceObject::getSpeed() const {
+    return _speed;
 }
 
 SpaceObject &SpaceObject::operator=(const SpaceObject &spaceObject) {
@@ -111,5 +119,6 @@ void SpaceObject::_normHP() {
 void SpaceObject::kill() {
     _hp = 0;
 }
+
 
 
