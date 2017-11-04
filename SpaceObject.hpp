@@ -27,7 +27,7 @@ protected:
     int _maxHP;
 };
 
-std::ostream &operator<<(std::ostream &os, const SpaceObject &object);
+std::ostream &operator<<(std::ostream &os, const SpaceObject &o);
 
 
 

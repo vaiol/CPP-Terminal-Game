@@ -60,9 +60,9 @@ SpaceObject &SpaceObject::operator-=(int amount) {
     return *this;
 }
 
-std::ostream &operator<<(std::ostream &os, const SpaceObject &object) {
-    os << "SpaceObject => x: " << object.getX() << " y: " << object.getY() << " damage: " << object.getDamage() << " hp: " << object.getHP()
-       << " maxHP: " << object.getMaxHP();
+std::ostream &operator<<(std::ostream &os, const SpaceObject &o) {
+    os << "SpaceObject => x: " << o.getX() << " y: " << o.getY() << " damage: " << o.getDamage() << " hp: " << o.getHP()
+       << " maxHP: " << o.getMaxHP();
     return os;
 }
 
