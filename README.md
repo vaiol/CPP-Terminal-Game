@@ -1,5 +1,6 @@
-# CPP-Terminal-Game
+# Simple-Terminal-Game
 VERY Simple terminal game which was written in one day!
+Language: C++
 
 ## Features:
 * Graphics: ncurses library
