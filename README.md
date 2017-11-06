@@ -11,6 +11,7 @@ Language: C++
 
 ## Authors:
 [Alexnder Stepanov](https://github.com/vaiol)
+
 [Yaroslav Savenko](https://github.com/YarSav)
 
 
