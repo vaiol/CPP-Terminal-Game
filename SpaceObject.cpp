@@ -8,17 +8,14 @@ SpaceObject::SpaceObject() {
     _damage = 0;
     _maxHP = 0;
     _hp = _maxHP;
+    _color = 0;
 }
 
-SpaceObject::SpaceObject(int x, int y, int damage, int hp, int maxHP, int speed) : _x(x), _y(y), _damage(damage), _hp(hp), _maxHP(maxHP), _speed(speed) {
-    _normHP();
-    _damage = _damage < 0 ? 0 : _damage;
-    _speed = _speed < 0 ? 0 : _speed;
-}
+SpaceObject::SpaceObject(int x, int y, int damage, int hp, int maxHP, char c, int color) : _x(x), _y(y), _damage(damage), _hp(hp),
+                                                                             _maxHP(maxHP), _c(c), _color(color) {}
 
 SpaceObject::SpaceObject(SpaceObject &spaceObject) {
     *this = spaceObject;
-    _normHP();
 }
 
 SpaceObject::~SpaceObject() {}
@@ -45,8 +42,12 @@ int SpaceObject::getMaxHP() const {
     return _maxHP;
 }
 
-int SpaceObject::getSpeed() const {
-    return _speed;
+char SpaceObject::getC() const {
+    return  this->_c;
+}
+
+int SpaceObject::getColor() const {
+    return _color;
 }
 
 SpaceObject &SpaceObject::operator=(const SpaceObject &spaceObject) {
@@ -55,6 +56,8 @@ SpaceObject &SpaceObject::operator=(const SpaceObject &spaceObject) {
     _damage = spaceObject._damage;
     _hp = spaceObject._hp;
     _maxHP = spaceObject._maxHP;
+    _c = spaceObject._c;
+    _color = spaceObject._color;
     return *this;
 }
 
@@ -72,40 +75,11 @@ SpaceObject &SpaceObject::operator-=(int amount) {
 
 std::ostream &operator<<(std::ostream &os, const SpaceObject &o) {
     os << "SpaceObject => x: " << o.getX() << " y: " << o.getY() << " damage: " << o.getDamage() << " hp: " << o.getHP()
-       << " maxHP: " << o.getMaxHP();
+       << " maxHP: " << o.getMaxHP() << " c: " << o.getC() << " color: " << o.getColor();
     return os;
 }
 
 /*LOGIC*/
-
-
-void SpaceObject::moveDown(int distance) {
-    if (distance < 0) {
-        distance = 0;
-    }
-    _y -= distance;
-}
-
-void SpaceObject::moveUp(int distance) {
-    if (distance < 0) {
-        distance = 0;
-    }
-    _y += distance;
-}
-
-void SpaceObject::moveLeft(int distance) {
-    if (distance < 0) {
-        distance = 0;
-    }
-    _x -= distance;
-}
-
-void SpaceObject::moveRight(int distance) {
-    if (distance < 0) {
-        distance = 0;
-    }
-    _x += distance;
-}
 
 void SpaceObject::_normHP() {
     if (_hp < 0) {
@@ -116,9 +90,15 @@ void SpaceObject::_normHP() {
     }
 }
 
-void SpaceObject::kill() {
-    _hp = 0;
-}
 
+bool SpaceObject::collision(const SpaceObject &a, const SpaceObject &b) {
+    if (&a == &b) {
+        return true;
+    }
+    if (a._x == b._x && a._y == b._y) {
+        return true;
+    }
+    return false;
+}
 
 

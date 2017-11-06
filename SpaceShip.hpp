@@ -13,16 +13,17 @@ public:
     virtual ~SpaceShip();
     int getScore() const;
     int getLevel() const;
+    int getMaxScore() const;
     SpaceShip &operator=(const SpaceShip &player);
     Bullet *attack() const;
+    Bullet *superAttack() const;
     void levelUp();
-    void moveUp(int distance);
-    void moveLeft(int distance);
-    void moveDown(int distance);
-    void moveRight(int distance);
+    void move(int x, int y, int x_m, int y_m);
+    void increaseScore(int amount);
 private:
     int _score;
     int _level;
+    int _maxScore;
 };
 
 std::ostream &operator<<(std::ostream &os, const SpaceShip &s);

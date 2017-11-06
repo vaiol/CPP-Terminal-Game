@@ -36,3 +36,10 @@
 CMakeLists.txt
 cmake-build-debug/
 
+#macOS
+.DS_Store
+._.DS_Store
+.nfs.*
+
+#project
+ft_retro
