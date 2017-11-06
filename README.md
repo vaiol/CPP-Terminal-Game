@@ -8,12 +8,12 @@ VERY Simple terminal game which was written in one day!
 * Levels: difficult increasing
 * Statistics: current score, level, hp and others
 
-### Authors:
+## Authors:
 [Alexnder Stepanov](https://github.com/vaiol)
 [Yaroslav Savenko](https://github.com/YarSav)
 
 
-### Gameplay:
+## Gameplay:
 ![Gameplay](/images/l1.png)
 ![Gameplay](/images/l2.png)
 ![Gameplay](/images/l3.png)
